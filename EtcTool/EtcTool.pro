@@ -12,8 +12,10 @@ DESTDIR = $$ETC2_LIBRARY_DESTINATION
 
 LIBS += -lEtcLib
 
-LIBS += -L$$BUILD_DIR
-LIBS += -lEtcLib
+!isEmpty($$BUILD_DIR) {
+  -LIBS += -L$$BUILD_DIR
+  -LIBS += -lEtcLib
+}
 
 INCLUDEPATH += ../EtcLib/EtcCodec/ \
                ../EtcLib/Etc/ \
